@@ -20,7 +20,12 @@ from django.urls import path
 from photos import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', views.home),
-    url(r'^photos/(?P<pk>[0-9]+)$', views.detail),
+
+    #Photos URLs
+    url(r'^$', views.home, name='photos_home'),
+    url(r'^photos/(?P<pk>[0-9]+)$', views.detail, name='photo_detail'),
+
+    #Users URLs
+    url(r'^photos/(?P<pk>[0-9]+)$'),
 ]
 

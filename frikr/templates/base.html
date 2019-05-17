@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}Bienvenido a frikr<{% endblock %}</title>
 </head>
 <body>
-
+    <nav>
+        <a href="{% url 'photos_home' %}">Home</a>
+    </nav>
+    <hr>
+    <section>
+        {% block section %} {% endblock %}
+    </section>
+    <hr>
+    <small>Frikr Inc &copy; Todos los derechos reservados</small>
 </body>
 </html>
