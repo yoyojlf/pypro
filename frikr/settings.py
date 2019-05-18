@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for frikr project.
 
@@ -121,3 +122,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Login url
+LOGIN_URL = '/login'#cuando un usuario no esta autenticado, le redirige a /login
+
+#Licencias disponibles y configurables desde aquí
+"""
+LICENSES = (
+    ('QUE', 'Quentin Tarantino'),
+    ('DSH', 'Dr. Shultz')
+)
+"""
+
+# BADWORDS http://goo.gl/G2nCu7
+PROJECT_BADWORDS = ['Abollao','Abrazafarolas','Afilasables','Analfabestia','Apollardao','Arrastramantas','Arrollapastos','Asaltapozos','Caracartón']
