@@ -21,6 +21,7 @@ from photos import views as views_photos
 from users import views as users_views
 from photos.views import HomeView, DetailView, CreateView, PhotoListView, UserPhotosView
 from users.views import LoginView, LogoutView
+from django.contrib.auth.decorators import login_required #para decorar los resultados de las url
 
 
 urlpatterns = [
@@ -30,7 +31,7 @@ urlpatterns = [
 #    url(r'^$', views_photos.home, name='photos_home'), #url normal basada en funcion
     url(r'^$', HomeView.as_view(), name='photos_home'), #url basada en clase
     url(r'^photos/$', PhotoListView.as_view(), name='photos_list'), #url normal basada en clase
-    url(r'^my-photos/$', UserPhotosView.as_view(), name='user_photos'), #url normal basada en clase
+    url(r'^my-photos/$', login_required(UserPhotosView.as_view()), name='user_photos'), #url normal basada en clase
 #    url(r'^photos/(?P<pk>[0-9]+)$', views_photos.detail, name='photo_detail'), #url normal basada en funcion
     url(r'^photos/(?P<pk>[0-9]+)$', DetailView.as_view(), name='photo_detail'), #url normal basada en clase
 #    url(r'^photos/new$', views_photos.create, name='create_photo'), #url normal basada en funcion
